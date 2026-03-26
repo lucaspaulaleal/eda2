@@ -6,12 +6,28 @@
 ### Conceitos Fundamentais
 - Definição e propriedades
 - Terminologia (raiz, nó, folha, altura, profundidade)
-- Tipos de árvores
+- Tipos de 
 
+```
+    A
+   /|\
+  B C D
+ / \   |
+E   F  G
+```
 ### Árvores Binárias
 - Estrutura e características
 - Percursos (pré-ordem, in-ordem, pós-ordem)
 - Árvores Binárias de Busca (BST)
+```
+        A
+       / \
+      B   C
+     / \ / \
+    D  E F  G
+   / \
+  H   I
+```
 
 ### Árvores Balanceadas
 - AVL
