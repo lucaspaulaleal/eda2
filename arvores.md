@@ -6,7 +6,7 @@
 ### Conceitos Fundamentais
 - Definição e propriedades
 - Terminologia (raiz, nó, folha, altura, profundidade)
-- Tipos de 
+- Tipos de árvores
 
 ```
     A
@@ -15,10 +15,12 @@
  / \   |
 E   F  G
 ```
+
 ### Árvores Binárias
 - Estrutura e características
 - Percursos (pré-ordem, in-ordem, pós-ordem)
 - Árvores Binárias de Busca (BST)
+
 ```
         A
        / \
@@ -28,13 +30,24 @@ E   F  G
    / \
   H   I
 ```
-- Dado um nó x,
-    - Os nós do nível abaixo de xque estejam ligados a x são seus descendentes ou filhos.
-    - O nó do nível acima de xque possui ligação com ele é dito o pai de x.
-    - O nó sem pai é a raiz.
-    - Nós sem filhos são chamados de folhas.
 
+**Terminologia:**
+- Os nós do nível abaixo de x que estejam ligados a x são seus descendentes ou filhos.
+- O nó do nível acima de x que possui ligação com ele é dito o pai de x.
+- O nó sem pai é a raiz.
+- Nós sem filhos são chamados de folhas.
 
+### Árvores Binárias Duplamente Chaveadas
+
+- Definição: árvore binária onde cada nó interno possui duas chaves e dados associados
+- Estrutura: nó com até 2 chaves, dados correspondentes e até 3 filhos
+- Propriedade: chaves e dados ordenados da esquerda para a direita
+
+```
+    [30:d1|60:d2]
+       /      |      \
+    [15:d0] [45:d3] [75:d4|90:d5]
+```
 
 
 ### Árvores Balanceadas
@@ -49,7 +62,8 @@ E   F  G
 
 ## Anotações de Aula
 
-### Data: 
+**Data:** 
+
 **Tópico:** 
 
 **Conceitos-chave:**
@@ -61,3 +75,4 @@ E   F  G
 
 **Dúvidas:**
 - 
+
