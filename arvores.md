@@ -48,7 +48,13 @@ E   F  G
        /      |      \
     [15:d0] [45:d3] [75:d4|90:d5]
 ```
-
+- Implementação
+``` 
+typedef struct celula {
+    int dado;
+    struch celula *esq, *dir;
+}
+```
 
 ### Árvores Balanceadas
 - AVL

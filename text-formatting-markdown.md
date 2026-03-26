@@ -17,5 +17,5 @@
     - Separador horizontal: `---` ou `***`
     - Tabelas: Use `|` para delimitadores de coluna
     - Imagens: `![texto alternativo](url-da-imagem)`
-
-    **Nota:** Markdown padrão não suporta sublinhado. Use HTML: `<u>texto sublinhado</u>`
+    ![Você antes de aprender sobre formatação em markdown](spongebob_meme.jpg)
+    **Nota:** Markdown padrão não suporta sublinhado. Use HTML: `<u>texto sublinhado</u>`: <u>texto sublinhado</u>
