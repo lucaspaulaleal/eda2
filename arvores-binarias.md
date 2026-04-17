@@ -28,22 +28,61 @@
 
 - Implementação
         
-        enum cor {vermelho,preto};
+        ```c
+        enum cor {vermelho, preto};
+
         typedef struct celula {
             int dado;
             struct celula *esq, *dir;
-            enum cor;
+            enum cor cor;
         } celula;
 
-        celula *cria_abb(int x) {
-            celula *raiz = malloc(sizeof(celula));
-            raiz->dado = x;
-            raiz->esq = raiz->dir = NULL;
-            raiz->cor = vermelho;
-            return raiz;
-        }    
-    - Condições de correção
-    - Operações de correção
+        int eh_vermelho(celula *h) {
+            if (h == NULL) return 0;
+            return h->cor == vermelho;
+        }
 
-- 
-    
+        celula *rotaciona_esquerda(celula *h) {
+            celula *x = h->dir;
+            h->dir = x->esq;
+            x->esq = h;
+            x->cor = h->cor;
+            h->cor = vermelho;
+            return x;
+        }
+
+        celula *rotaciona_direita(celula *h) {
+            celula *x = h->esq;
+            h->esq = x->dir;
+            x->dir = h;
+            x->cor = h->cor;
+            h->cor = vermelho;
+            return x;
+        }
+
+        void inverte_cores(celula *h) {
+            h->cor = vermelho;
+            h->esq->cor = preto;
+            h->dir->cor = preto;
+        }
+
+        celula *insere(celula *h, int dado) {
+            if (h == NULL) {
+                celula *novo = malloc(sizeof(celula));
+                novo->dado = dado;
+                novo->esq = novo->dir = NULL;
+                novo->cor = vermelho;
+                return novo;
+            }
+
+            if (dado < h->dado) h->esq = insere(h->esq, dado);
+            else if (dado > h->dado) h->dir = insere(h->dir, dado);
+
+            // Condições de correção
+            if (eh_vermelho(h->dir) && !eh_vermelho(h->esq))      h = rotaciona_esquerda(h); // Caso 1
+            if (eh_vermelho(h->esq) && eh_vermelho(h->esq->esq)) h = rotaciona_direita(h);   // Caso 2
+            if (eh_vermelho(h->esq) && eh_vermelho(h->dir))      inverte_cores(h);          // Caso 3
+
+            return h;
+        }
+        ```

@@ -52,8 +52,8 @@ E   F  G
 ``` 
 typedef struct celula {
     int dado;
-    struch celula *esq, *dir;
-}
+    struct celula *esq, *dir;
+} celula;
 ```
 
 ### Árvores Balanceadas
@@ -65,6 +65,36 @@ typedef struct celula {
 - Busca e ordenação
 - Heap e filas de prioridade
 - Sistemas de arquivos
+
+### QuickSelect
+- Implementação
+
+```c
+int particiona(int *v, int l, int r) {
+    int pivo = v[r];
+    int i = l;
+    for (int j = l; j < r; j++) {
+        if (v[j] <= pivo) {
+            int tmp = v[i];
+            v[i] = v[j];
+            v[j] = tmp;
+            i++;
+        }
+    }
+    int tmp = v[i];
+    v[i] = v[r];
+    v[r] = tmp;
+    return i;
+}
+
+int quickselect(int *v, int l, int r, int k) {
+    if (l == r) return v[l];
+    int p = particiona(v, l, r);
+    if (k == p) return v[k];
+    if (k < p) return quickselect(v, l, p - 1, k);
+    return quickselect(v, p + 1, r, k);
+}
+```
 
 ## Anotações de Aula
 
